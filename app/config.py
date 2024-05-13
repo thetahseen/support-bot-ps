@@ -40,7 +40,7 @@ class RedisConfig:
 
         :return: The generated DSN.
         """
-        return f"redis://{self.HOST}:{self.PORT}/{self.DB}"
+        return f"redis://:{self.PASSWORD}@{self.HOST}:{self.PORT}/{self.DB}"
 
 
 @dataclass
