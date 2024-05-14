@@ -1,0 +1,28 @@
+{
+  "name": "support-bot",
+  "description": "A support bot application deployed on Heroku.",
+  "image": "heroku/python",
+  "addons": [
+    "heroku-redis"
+  ],
+  "scripts": {
+    "postdeploy": "python -m app"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "env": {
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "BOT_TOKEN": "6737239934:AAH833eenl0uJxjPllzrWZsYeZyu0KnrcJI",
+    "BOT_DEV_ID": "6387028671",
+    "BOT_GROUP_ID": "-1002144783219",
+    "BOT_EMOJI_ID": "5417915203100613993",
+    "REDIS_HOST": "redis-15702.c59.eu-west-1-2.ec2.redns.redis-cloud.com",
+    "REDIS_PORT": "15702",
+    "REDIS_DB": "",
+    "REDIS_PASSWORD": "jxR4MVTAvNbqoLIdHRk7S1CXywaS3Vtv"
+  }
+}
