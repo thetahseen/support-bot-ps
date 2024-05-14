@@ -33,6 +33,7 @@ class RedisConfig:
     HOST: str
     PORT: int
     DB: int
+    PASSWORD: str
 
     def dsn(self) -> str:
         """
@@ -40,7 +41,7 @@ class RedisConfig:
 
         :return: The generated DSN.
         """
-        return f"redis://:7ML8CEd8PJ9rVTrhyG8U7gMQeFm86QWj@http://redis-10700.c15.us-east-1-2.ec2.redns.redis-cloud.com:10700/1"
+        return f"redis://default:{self.PASSWORD}@{self.HOST}:{self.PORT}/{self.DB}"
 
 
 @dataclass

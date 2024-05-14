@@ -64,10 +64,10 @@ async def main() -> None:
 
     # Initialize apscheduler
     job_store = RedisJobStore(
-        password="7ML8CEd8PJ9rVTrhyG8U7gMQeFm86QWj",
-        host="http://redis-10700.c15.us-east-1-2.ec2.redns.redis-cloud.com",
-        port=10700,
-        db=2,
+        host=config.redis.HOST,
+        port=config.redis.PORT,
+        db=config.redis.DB,
+        password=config.redis.PASSWORD,
     )
     apscheduler = AsyncIOScheduler(
         jobstores={"default": job_store},
