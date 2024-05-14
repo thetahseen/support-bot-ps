@@ -77,5 +77,6 @@ def load_config() -> Config:
             HOST=env.str("REDIS_HOST"),
             PORT=env.int("REDIS_PORT"),
             DB=env.int("REDIS_DB"),
+            PASSWORD=env.str("REDIS_PASSWORD"),
         ),
     )
