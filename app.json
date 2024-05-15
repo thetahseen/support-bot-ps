@@ -1,28 +1,53 @@
 {
-  "name": "support-bot",
-  "description": "A support bot application deployed on Heroku.",
-  "image": "heroku/python",
-  "addons": [
-    "heroku-redis"
+  "name": "Support-bot",
+  "description": "Telegram bot for feedback with topic support.",
+  "logo": "https://telegra.ph/file/b5481bfb49c4305e8514d.jpg",
+  "keywords": [
+    "telegram",
+    "support-bot",
+    "bot",
+    "python",
+    "aiogram"
   ],
-  "scripts": {
-    "postdeploy": "python -m app"
-  },
-  "formation": {
-    "web": {
-      "quantity": 1
+  "env": {
+    "BOT_DEV_ID": {
+      "description": "Get it from @chat_id_echo_bot",
+      "required": true
+    },
+    "BOT_EMOJI_ID": {
+      "description": "Set your bot Emoji id",
+      "value": "5417915203100613993",
+      "required": true
+    },
+    "BOT_GROUP_ID": {
+      "description": "Get it from @chat_id_echo_bot",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Get it from @botfather",
+      "required": true
+    },
+    "REDIS_DB": {
+      "description": "Your redis database, default 0",
+      "value": "0",
+      "required": true
+    },
+    "REDIS_HOST": {
+      "description": "Get it from redis.io",
+      "required": true
+    },
+    "REDIS_PASSWORD": {
+      "description": "Your redis database password",
+      "required": true
+    },
+    "REDIS_PORT": {
+      "description": "Your redis database port",
+      "required": true
     }
   },
-  "env": {
-    "PYTHONUNBUFFERED": "1",
-    "PYTHONDONTWRITEBYTECODE": "1",
-    "BOT_TOKEN": "6737239934:AAH833eenl0uJxjPllzrWZsYeZyu0KnrcJI",
-    "BOT_DEV_ID": "6387028671",
-    "BOT_GROUP_ID": "-1002144783219",
-    "BOT_EMOJI_ID": "5417915203100613993",
-    "REDIS_HOST": "redis-15702.c59.eu-west-1-2.ec2.redns.redis-cloud.com",
-    "REDIS_PORT": "15702",
-    "REDIS_DB": "",
-    "REDIS_PASSWORD": "jxR4MVTAvNbqoLIdHRk7S1CXywaS3Vtv"
-  }
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
 }
